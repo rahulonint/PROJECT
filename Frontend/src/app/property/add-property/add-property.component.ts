@@ -1,5 +1,6 @@
 import { Route, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-add-property',
@@ -15,5 +16,8 @@ export class AddPropertyComponent implements OnInit {
 
   onBack(){
     this.router.navigate(['/']);
+  }
+  onSubmit(Form: NgForm){
+    console.log(Form);
   }
 }
