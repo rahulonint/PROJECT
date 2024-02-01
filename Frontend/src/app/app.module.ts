@@ -1,7 +1,12 @@
-import { NgModule } from '@angular/core';
+import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {HttpClientModule  } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +20,9 @@ import { PropertyDetailComponent } from './property/property-detail/property-det
 import { PageNotFoundComponent } from './pageNotFound/pageNotFound.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
+import { UserServiceService } from './services/user-service.service';
+import { AlertifyService } from './services/alertify.service';
+import { AuthService } from './services/auth.service';
 
 const appRoutes: Route[] = [
   {path: '', component: PropertyListComponent},
@@ -36,19 +44,34 @@ const appRoutes: Route[] = [
       PropertyDetailComponent,
       PageNotFoundComponent,
       UserLoginComponent,
-      UserRegisterComponent
+      UserRegisterComponent,
+      
    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule,      //for template driven forms
-    ReactiveFormsModule   //for reactive forms
+    
+    //for template driven forms
+    FormsModule,      
+    //for reactive forms
+    ReactiveFormsModule,   
+
+    //for ngx-bootstrap
+    BrowserAnimationsModule,
+    BsDropdownModule.forRoot(),
+    TabsModule.forRoot(),
+    ButtonsModule.forRoot(),
+    BsDatepickerModule.forRoot()
   ],
   providers: [
-    HousingService
+    HousingService,
+    UserServiceService,
+    AlertifyService,
+    AuthService
   ],
+schemas: [NO_ERRORS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IProperty } from '../IProperty.interface';
 import { ActivatedRoute } from '@angular/router';
+import { IPropertyBase } from 'src/app/model/IPropertyBase';
 
 @Component({
   selector: 'app-property-card',
@@ -15,5 +15,6 @@ export class PropertyCardComponent implements OnInit {
     
   }
 
-  @Input() property!: any;
+  @Input() property!: IPropertyBase;
+  @Input() hideIcons!: boolean;
 }

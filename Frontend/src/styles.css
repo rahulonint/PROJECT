@@ -1,1 +1,14 @@
-@import 'src/assets/form.css'
+@import 'src/assets/form.css';
+@import '../node_modules/alertifyjs/build/css/alertify.min.css';
+@import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
+@import 'src/assets/tabs.css';
+
+app-property-list{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+@media only screen and (max-width: 767px) {
+    app-property-list {
+        grid-template-columns: auto;
+    }
+  }

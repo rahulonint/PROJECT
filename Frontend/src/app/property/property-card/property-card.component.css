@@ -1,5 +1,6 @@
 .card {
     min-height: 400px;
+    /* min-width: 400px; */
   }
   
   .card-body h1 {
@@ -31,6 +32,12 @@
     transition-timing-function: ease-out;
     height: 250px
   }
+  /* .card-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  } */
   
   .member-icons{
     position: absolute;
